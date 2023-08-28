@@ -8,13 +8,33 @@ Abstract methods must be in abstract classes.
 1. Abstract classes are able to allow both concrete methods and abstract methods. Interfaces are able to allow only abstract methods.
 2. To declare abstract classes, we need the `class` keyword and the `abstract` keyword. To declare interfaces, we need the `interface` keyword.
 3. For abstract classes and interfaces, we are able to create reference variables, but making objects of these is not allowed.
-4. In an interface, all variables are public, static, and final. In an abstract class, this is not the case and we need to declare them explicitly.
-5. In an interface, all methods are public and abstract, so they don't need to be explicitly marked as such. In the case of an abstract class, there's no default case, and we need to declare methods explicitly.
-6. In an interface, all inner classes are static in nature, but this is not the case in abstract classes. There's no default case in abstract classes.
-7. Abstract classes allow constructors, but interfaces do not allow constructors.
+4. In an interface, all variables are **`public, static, and final`**. In an abstract class, this is not the case and we need to declare them explicitly.
+5. In an interface, all methods are `public and abstract`, so they don't need to be explicitly marked as such. In the case of an abstract class, there's no default case, and we need to declare methods explicitly.
+6. In an interface, `all inner classes are static in nature`, but this is not the case in abstract classes. There's no default case in abstract classes.
+7. Abstract classes allow constructors, `but interfaces do not allow constructors`.
 8. Abstract classes can have static blocks and instance blocks, but these are not allowed in interfaces.
 9. Abstract classes have medium shareability, whereas interfaces have high shareability.
 10. interface can extend as many intefaces inside it, but abstract class can extend only one class.
+
+
+### Can a Method be private in an abstract class?
+- No the method cannot be private
+
+## Can an abstract method declaration include throws?
+- Yes, it is possible
+
+
+### Can a Method be static and abstract in an abstract class?
+- No as static methods belong to class and resolved at compile time there is no implementation available at compile time. So they are not allowed.
+
+### Can a method be synchronized in an inteface?
+- No it is not possible
+
+### Can a method be native or strictfp in interface?
+- No it is not allowed.
+
+### Can we write an inner class in interface?
+- Yes, we can and they are static by default.
 
 Example:
 ```java
@@ -81,12 +101,18 @@ class should come first and then interface.
 1. Cloneable Interface
 2. Serializable Interface
 3. Remote Interface
+4. Random Interface
 
 ## What is the need of marker interfaces
 1. provide information at runtime to the libraries
 2. Helps in behaviour indication.Eg: Serializable Interface
 3. Helps in intgeration with the frameworks like Remote interface
 4. Helps in figuring out the intent, they can undestand the expected behaviour without implementation details.
+
+## Can we Write our own marker interface?
+1. Yes, we can write our own by reflection API.
+
+
 
 ## What is Serializable Interface
 1. Serializable interface is present in java.io package. It is used to make an object eligible for saving its state into a file. This is called **Serialization**.
