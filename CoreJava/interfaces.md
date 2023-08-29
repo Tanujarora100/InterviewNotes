@@ -16,6 +16,13 @@ Abstract methods must be in abstract classes.
 9. Abstract classes have medium shareability, whereas interfaces have high shareability.
 10. interface can extend as many intefaces inside it, but abstract class can extend only one class.
 
+### Can interfaces have static methods?
+- No. Interfaces can’t have static methods.
+
+### Can we override an interface method with visibility other than public?
+
+- No. While overriding any interface methods, we should use public only. 
+- Because, all interface methods are public by default and you should not reduce the visibility while overriding them.
 
 ### Can a Method be private in an abstract class?
 - No the method cannot be private
@@ -181,7 +188,7 @@ public class NonCloneableClass {
 }
 ```
 
+# Adapter Classes
 
-# ADAPTER CLASSES
 
 
