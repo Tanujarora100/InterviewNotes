@@ -9,6 +9,7 @@ To Perform Input Operations we wil use set of instructions->Input Statements
     - In General streams are classified into Two Ways:
         - Byte Oriented Streams
         - Character Oriented Streams
+
 ## **What are Byte Oriented Streams?**
 - It is able to allow data in form of bytes to continue flow from input devices to java applications to output devices.
 - The Length of the data item is of 1 byte.
@@ -30,6 +31,7 @@ To Perform Input Operations we wil use set of instructions->Input Statements
             - DataOutputStream
             - ObjectOutputStream
             - BufferedOutputStream
+
 ## **What are character Oriented Streams?**
 - Allows data in the form of characters in continous flow from input devices to java applications and from java apps to output devices.
 - In Character Oriented streams the length of the data item is of 2 Bytes
@@ -159,4 +161,82 @@ public class Writer {
     - BufferedReader
     - Console
     - Scanner
-- What is BufferedReader?
+
+## Buffered Reader Class:
+- character based
+- extends the reader class
+- internal buffer of 8192 characters.
+
+### Why it is useful?
+- during the reading a chunk of characters is put into the buffer and read character by character then=> Less Read Operations=> more reading speed.
+
+```java
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Example {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fileInputStream = new FileInputStream("file.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                // Process the line
+                System.out.println(line);
+            }
+
+            // Close the BufferedReader when done
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+## Methods of BufferedReader:
+- read()-> read single character
+- read(char[] array)-> reads the character and store in array
+- read(char[] array, int start, int length)=>reads the number of characters equal to length from the reader and stores in the specified array starting from the position start
+- skip() method-> skip some characters
+- mark()-> marks the position in reader up to which data has been read.
+
+# File Class in Java?
+
+## In Which Package it is located?
+- java.io 
+
+## What is a pathSeparator in File Class?
+- To make the code more platform independent we can constant file.separator instead of '/' or '\'.
+
+## Constructors in File Class
+- File(File parent, String child)
+    - here the parent is the parent directory or fiile which we create instance. It should be existent
+    - child can be the path name or the new directory to which we create the object
+```java
+    File parentDirectory = new File("/path/to/parentDirectory");
+String childFileName = "childFile.txt";
+
+// Create a new File instance representing the child file within the parent directory
+File childFile = new File(parentDirectory, childFileName);
+```
+## File Class Methods:
+- canExecute()-> check if this file can be executed
+- canRead()-> check if this file can be read.
+- getParent()-> get the parent directory
+- getParentFile()-> get the parent file
+- getPath()-> get the path
+- isFile()-> check if this file
+- isHidden()
+- listFiles-> File[]
+- length()-> returns length in long.
+- setExecutable()-> sets the permission to execute
+- setReadable()-> sets the permission to read.
+
+## java.io.Console
+- added in JDK 1.6 Version
+- character based.
