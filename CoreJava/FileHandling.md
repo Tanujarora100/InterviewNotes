@@ -32,6 +32,10 @@ To Perform Input Operations we wil use set of instructions->Input Statements
             - ObjectOutputStream
             - BufferedOutputStream
 
+## What is FileInputStream:
+- implements autocloseable interface.
+
+
 ## **What are character Oriented Streams?**
 - Allows data in the form of characters in continous flow from input devices to java applications and from java apps to output devices.
 - In Character Oriented streams the length of the data item is of 2 Bytes
